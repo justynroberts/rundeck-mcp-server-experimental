@@ -1,0 +1,62 @@
+{
+  "list_servers": {
+    "description": "List all configured Rundeck servers",
+    "prompt": "Shows all configured Rundeck servers with their URLs and API versions.display as a table. Use this to see which servers are available before specifying a server in other tools."
+  },
+  "get_projects": {
+    "description": "Get all Rundeck projects available in your instance",
+    "prompt": "This tool retrieves all projects from your Rundeck server. Use this to discover available projects before working with jobs or executions. Optionally specify a server name to target a specific Rundeck instance."
+  },
+  "get_jobs": {
+    "description": "Get jobs from a Rundeck project with optional filtering",
+    "prompt": "Retrieve jobs from a specific project with human-readable formatting. Jobs are organized by group with status indicators (✅ enabled, ❌ disabled, ⏰ scheduled, 🔧 manual). Perfect for browsing available jobs."
+  },
+  "get_job_definition": {
+    "description": "Get detailed job definition including options, workflow, and metadata",
+    "prompt": "Get comprehensive details about a specific job including its workflow steps, input options, scheduling configuration, and execution settings. Essential for understanding job requirements before execution.if asked to describe the job in detail, also create a flowchart avoiding special characters"
+  },
+  "run_job": {
+    "description": "Execute a Rundeck job with optional parameters",
+    "prompt": "Execute a job immediately with optional parameters and node filters. Returns execution ID for monitoring. Use get_job_definition first to understand required options."
+  },
+  "get_execution_status": {
+    "description": "Get the status and details of a job execution",
+    "prompt": "Check the current status of a running or completed job execution. Shows execution state, timing, user, and node results. Use the execution ID returned from run_job."
+  },
+  "get_execution_output": {
+    "description": "Get the output logs of a job execution",
+    "prompt": "Retrieve the complete output logs from a job execution. Useful for debugging failed jobs or reviewing execution details."
+  },
+  "get_executions": {
+    "description": "Get executions for a project with filtering options and pagination",
+    "prompt": "Query execution history with human-readable formatting showing status icons (✅ succeeded, ❌ failed, 🔄 running). Supports pagination and filtering. Returns formatted summaries by default - perfect for browsing recent activity."
+  },
+  "get_all_executions": {
+    "description": "Get all executions with automatic pagination (up to specified limit)",
+    "prompt": "Retrieve large datasets with automatic pagination and status summaries. Shows overview statistics and recent executions in human-readable format. Ideal for comprehensive project analysis and reporting."
+  },
+  "get_execution_metrics": {
+    "description": "Get comprehensive execution metrics and analytics for a project",
+    "prompt": "Generate detailed analytics including success rates, duration statistics, job frequency analysis, and performance trends over a specified time period. Perfect for project health assessment."
+  },
+  "get_system_info": {
+    "description": "Get Rundeck system information and health metrics",
+    "prompt": "Retrieve system-level information about your Rundeck instance including version, health status, and configuration details."
+  },
+  "get_project_stats": {
+    "description": "Get comprehensive statistics for a project including jobs and execution metrics",
+    "prompt": "Generate a complete project overview including job counts (total, enabled, scheduled), recent execution metrics, and project configuration. Ideal for project health dashboards."
+  },
+  "calculate_job_roi": {
+    "description": "Calculate ROI metrics for a specific job including cost analysis and value estimation",
+    "prompt": "Perform comprehensive ROI analysis for automation jobs including execution costs, estimated manual work savings, and ROI percentage. Helps justify automation investments and identify optimization opportunities."
+  },
+  "get_bulk_execution_status": {
+    "description": "Get status for multiple executions efficiently",
+    "prompt": "Check status for multiple executions in a single operation. More efficient than individual status checks when monitoring multiple jobs."
+  },
+  "run_job_with_monitoring": {
+    "description": "Execute a job with optional monitoring until completion",
+    "prompt": "Estimate the impact of the job from a risk or cost perspective, and if a risk, ask for confirmation, explaining why, ALWAYS show red amber or green square emoji and Impact assesment: at the beginning.Execute a job and wait for completion showing the output in a code box.if the job definition has options display them once as a numbered list in a table with a arrow emoji depicting if required, or optional, with the default value in brackets, Make sure required options are requested from the user before execution.Stop the job to allow the user to enter values in the form number/value.if only predefined values are available, only let these be selected before running.Do NOT run without confirmation of options or defaults. always show output. Includes timeout protection and returns final execution status. Ideal for automated workflows requiring completion confirmation."
+  }
+}

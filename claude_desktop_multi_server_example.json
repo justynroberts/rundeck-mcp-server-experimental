@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "rundeck": {
+      "command": "/Users/justynroberts/work/rundeck-mcp-server/.venv/bin/python",
+      "args": ["/Users/justynroberts/work/rundeck-mcp-server/rundeck_mcp_server.py"],
+      "env": {
+        "RUNDECK_URL": "https://rundeck-main.company.com",
+        "RUNDECK_API_TOKEN": "your-main-api-token-here",
+        "RUNDECK_API_VERSION": "47",
+        "RUNDECK_URL_1": "https://rundeck-prod.company.com",
+        "RUNDECK_API_TOKEN_1": "your-prod-api-token-here",
+        "RUNDECK_API_VERSION_1": "47",
+        "RUNDECK_NAME_1": "production",
+        "RUNDECK_URL_2": "https://rundeck-staging.company.com",
+        "RUNDECK_API_TOKEN_2": "your-staging-api-token-here",
+        "RUNDECK_API_VERSION_2": "47",
+        "RUNDECK_NAME_2": "staging",
+        "RUNDECK_URL_3": "https://rundeck-dev.company.com",
+        "RUNDECK_API_TOKEN_3": "your-dev-api-token-here",
+        "RUNDECK_API_VERSION_3": "47",
+        "RUNDECK_NAME_3": "development"
+      }
+    }
+  }
+}
