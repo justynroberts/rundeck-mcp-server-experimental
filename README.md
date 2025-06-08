@@ -9,7 +9,7 @@
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝ ╚═════╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝╚═╝     
 ```
 
-**A Model Context Protocol (MCP) server for Rundeck automation**
+**A Model Context Protocol (MCP) server for Rundeck and Runbook Automation**
 
 ![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -26,7 +26,13 @@
 
 ## 🌟 Overview
 
-Transform your Rundeck automation with AI-powered job management! This MCP server bridges the gap between Claude AI and your Rundeck infrastructure, enabling intelligent automation workflows, comprehensive analytics, and ROI analysis.
+Transform your Rundeck and Runbook Automation with AI-powered job management! This MCP server bridges the gap between Claude AI and your automation infrastructure, enabling intelligent automation workflows, comprehensive analytics, and ROI analysis.
+
+**Compatible with:**
+- 🏢 **Rundeck Enterprise** (full feature support)
+- ☁️ **Runbook Automation** (PagerDuty's cloud offering)
+- 🏠 **Runbook Automation Self-Hosted** (on-premises deployment)
+- 🆓 **Rundeck Community** (limited features - see compatibility notes below)
 
 > 🔬 **Built as an Experiment**: This project was created to explore the possibilities of integrating AI with DevOps automation tools. While functional, it's designed for experimentation and learning.
 
@@ -46,11 +52,13 @@ Transform your Rundeck automation with AI-powered job management! This MCP serve
 - **📋 Project Statistics**: Detailed project insights and job counts
 - **⏱️ Real-time Monitoring**: Live job execution tracking
 
-### 💰 ROI & Cost Analysis
+### 💰 ROI & Cost Analysis *(Enterprise/Commercial versions only)*
 - **💵 Cost Calculation**: Analyze automation costs vs manual work
 - **📈 ROI Metrics**: Calculate return on automation investment
 - **🎯 Value Assessment**: Quantify time and resource savings
 - **📊 Business Intelligence**: Transform data into actionable insights
+
+> ⚠️ **Note**: ROI and advanced analytics features require commercial versions (Rundeck Enterprise, Runbook Automation). These features are not available in Rundeck Community Edition.
 
 ### 🔧 Enhanced Capabilities
 - **🔄 Multi-Server Support**: Manage multiple Rundeck environments
@@ -72,7 +80,28 @@ Transform your Rundeck automation with AI-powered job management! This MCP serve
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🛠️ Quick Start
+## 🔄 Platform Compatibility
+
+### Feature Matrix
+
+| Feature | Rundeck Community | Rundeck Enterprise | Runbook Automation | Runbook Automation Self-Hosted |
+|---------|-------------------|-------------------|-------------------|--------------------------------|
+| ✅ Core Job Management | ✅ Full Support | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| ✅ Project Management | ✅ Full Support | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| ✅ Job Execution | ✅ Full Support | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| ✅ Basic Analytics | ✅ Full Support | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| ✅ Multi-Server Support | ✅ Full Support | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| 💰 ROI Analysis | ❌ Not Available | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| 📊 Advanced Analytics | ❌ Limited | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+| 🏥 System Health Metrics | ❌ Limited | ✅ Full Support | ✅ Full Support | ✅ Full Support |
+
+### Notes
+- **Rundeck Community**: Free version with core automation features
+- **Rundeck Enterprise**: Commercial version with full feature set
+- **Runbook Automation**: PagerDuty's cloud-hosted automation platform
+- **Runbook Automation Self-Hosted**: On-premises deployment of PagerDuty's platform
+
+## �️ Quick Start
 
 ### 📋 Prerequisites
 
@@ -276,7 +305,87 @@ Use the get_project_stats tool with:
 - project: "my-project"
 ```
 
-## 📚 Documentation
+## 🛠️ Available Tools
+
+### Complete Tools Reference
+
+| Tool | Category | Description | Commercial Only |
+|------|----------|-------------|-----------------|
+| `list_servers` | 🖥️ **Server Management** | List all configured Rundeck servers | ❌ |
+| `get_projects` | 🏗️ **Project Management** | Get all available Rundeck projects | ❌ |
+| `get_jobs` | ⚙️ **Job Management** | Get jobs from a project with filtering | ❌ |
+| `get_job_definition` | 📋 **Job Management** | Get detailed job definition and workflow | ❌ |
+| `run_job` | 🚀 **Job Execution** | Execute a job with optional parameters | ❌ |
+| `run_job_with_monitoring` | 🚀 **Job Execution** | Execute job with monitoring until completion | ❌ |
+| `get_execution_status` | 📊 **Execution Monitoring** | Get status and details of job execution | ❌ |
+| `get_execution_output` | 📄 **Execution Monitoring** | Get complete output logs from execution | ❌ |
+| `get_executions` | 📈 **Analytics** | Get execution history with filtering/pagination | ❌ |
+| `get_all_executions` | 📈 **Analytics** | Get all executions with automatic pagination | ❌ |
+| `get_bulk_execution_status` | 📊 **Execution Monitoring** | Check status for multiple executions | ❌ |
+| `get_execution_metrics` | 📊 **Analytics** | Get comprehensive execution analytics | ⚠️ Limited |
+| `get_system_info` | 🏥 **System Health** | Get Rundeck system information and health | ⚠️ Limited |
+| `get_project_stats` | 📋 **Analytics** | Get comprehensive project statistics | ⚠️ Limited |
+| `calculate_job_roi` | 💰 **ROI Analysis** | Calculate ROI metrics and cost analysis | ✅ Yes |
+
+**Legend:**
+- ❌ **Available on all platforms** (including Rundeck Community)
+- ⚠️ **Limited on Community** (reduced functionality on free version)
+- ✅ **Commercial only** (Rundeck Enterprise, Runbook Automation only)
+
+## 💡 Example Questions You Can Ask
+
+### 🏗️ Project & Infrastructure Questions
+1. **"What Rundeck servers do I have configured?"**
+   - Lists all your configured servers with their details
+
+2. **"Show me all projects in my Rundeck instance"**
+   - Displays all available projects across your servers
+
+3. **"What jobs are available in the 'infrastructure' project?"**
+   - Lists all jobs in a specific project with their status
+
+### ⚙️ Job Management Questions
+4. **"Show me the details of job 'backup-database'"**
+   - Provides complete job definition, workflow, and options
+
+5. **"Run the 'deploy-application' job with environment=staging"**
+   - Executes a job with specific parameters
+
+6. **"What are the required options for the 'server-maintenance' job?"**
+   - Shows job parameters and their requirements
+
+### 📊 Monitoring & Status Questions
+7. **"What's the status of execution ID 12345?"**
+   - Checks current status of a running or completed job
+
+8. **"Show me the output logs from the last deployment job"**
+   - Retrieves execution logs for troubleshooting
+
+9. **"What jobs have run in the last 24 hours?"**
+   - Lists recent executions with their status
+
+### 📈 Analytics & Reporting Questions
+10. **"Give me execution metrics for the 'production' project over the last 30 days"**
+    - Provides comprehensive analytics and success rates
+
+11. **"Which jobs fail most frequently in my environment?"**
+    - Identifies problematic jobs needing attention
+
+12. **"Show me project statistics for 'infrastructure'"**
+    - Comprehensive project health overview
+
+### 💰 ROI & Cost Analysis Questions *(Commercial versions only)*
+13. **"Calculate the ROI for my 'automated-backup' job"**
+    - Analyzes cost savings and automation value
+
+14. **"What's the cost impact of running deployment jobs daily?"**
+    - Estimates operational costs and savings
+
+### 🔧 Advanced Operations Questions
+15. **"Run the 'system-health-check' job and wait for completion"**
+    - Executes job with real-time monitoring until finished
+
+## � Documentation
 
 | Document | Description |
 |----------|-------------|
